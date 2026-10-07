@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>サポート依頼</title>
+<title>ZCC検証サイト</title>
 
 <style>
 body {
@@ -40,11 +40,6 @@ h1 {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
-}
-
-.action-button:hover {
-    transform: translateY(-2px);
 }
 
 .support {
@@ -56,13 +51,15 @@ h1 {
     background-color: #00a854;
     color: white;
 }
-
-.note {
-    margin-top: 50px;
-    color: #666;
-    font-size: 14px;
-}
 </style>
+
+<!-- Zoom Contact Center SDK -->
+<script
+    type="module"
+    src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"
+    data-apikey="WRjNn8TISFuzfK4O7-bRxA"
+    data-env="us01">
+</script>
 
 </head>
 
@@ -76,40 +73,38 @@ h1 {
 
         <button
             class="action-button support"
-            onclick="window.location.href='https://mki-saito.github.io/ZCC_Test/?campaign_id=fbYbxKwhRNiyEX96htZzcA&channel=video'">
-            弊社サポート依頼ボタン
+            onclick="openSupport()">
+            弊社サポートページへ接続
         </button>
 
         <button
-            class="action-button freecall"
-            onclick="openFreeCall()">
-            クライアントサポートセンターへ電話ボタン
+            class="action-button freecall">
+            フリーコールへ接続
         </button>
 
-    </div>
-
-    <div class="note">
-        本ページは検証用環境です。
     </div>
 
 </div>
 
 <script>
 
+window.addEventListener("zoomCampaignSdk:ready", () => {
+    console.log("Zoom Contact Center SDK Ready");
+});
+
 function openSupport() {
 
-    // 将来ZCCサポートキャンペーン起動用
+    if (window.zoomCampaignSdk) {
 
-    alert("サポートページへ接続");
+        console.log("Opening Zoom Campaign");
 
-}
+        window.zoomCampaignSdk.open();
 
-function openFreeCall() {
+    } else {
 
-    // 将来ZCCフリーコールキャンペーン起動用
+        alert("Zoom SDKがまだ読み込まれていません");
 
-    alert("フリーコールへ接続");
-
+    }
 }
 
 </script>

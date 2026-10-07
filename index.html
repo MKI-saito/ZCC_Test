@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ窓口</title>
+
+<style>
+body {
+    font-family: "Yu Gothic", sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.button-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.action-button {
+    width: 400px;
+    max-width: 90%;
+    height: 80px;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+}
+
+.support {
+    background-color: #0b5cff;
+    color: white;
+}
+
+.freecall {
+    background-color: #00a854;
+    color: white;
+}
+
+.note {
+    margin-top: 50px;
+    color: #666;
+    font-size: 14px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>お問い合わせ方法を選択してください</h1>
+
+    <div class="button-area">
+
+        <button
+            class="action-button support"
+            onclick="openSupport()">
+            弊社サポートページへ接続
+        </button>
+
+        <button
+            class="action-button freecall"
+            onclick="openFreeCall()">
+            フリーコールへ接続
+        </button>
+
+    </div>
+
+    <div class="note">
+        本ページは検証用環境です。
+    </div>
+
+</div>
+
+<script>
+
+function openSupport() {
+
+    // 将来ZCCサポートキャンペーン起動用
+
+    alert("サポートページへ接続");
+
+}
+
+function openFreeCall() {
+
+    // 将来ZCCフリーコールキャンペーン起動用
+
+    alert("フリーコールへ接続");
+
+}
+
+</script>
+
+</body>
+</html>

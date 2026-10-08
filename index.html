@@ -1,21 +1,125 @@
-<div class=
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
 
-    <h1>お問い合わせ方法を選択してください</h1>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <div class="button-area">
+    <title>Zoom Contact Center 検証</title>
 
-        <button
-            class="action-button support-button"
-            onclick="window.location.href='https://mki-saito.github.io/ZCC_Test/?campaign_id=fbYbxKwhRNiyEX96htZzcA&channel=video'">
-            弊社サポート依頼ボタン
-        </button>
+    <style>
+        body {
+            font-family: "Yu Gothic", "Meiryo", sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
 
-        <button
-            class="action-button client-button"
-            onclick="window.location.href='https://mki-saito.github.io/ZCC_Test/?campaign_id=fbYbxKwhRNiyEX96htZzcA&channel=video'">
-            クライアントサポートセンターへ
-        </button>
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            text-align: center;
+        }
 
-    </div>
+        h1 {
+            color: #222222;
+            margin-bottom: 50px;
+        }
 
-</div>
+        .button-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .action-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 450px;
+            max-width: 90%;
+            min-height: 90px;
+            padding: 0 20px;
+            border: none;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition:
+                transform 0.2s,
+                opacity 0.2s;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .support-button {
+            background-color: #ffd700;
+            color: #222222;
+        }
+
+        .client-button {
+            background-color: #d32f2f;
+            color: #ffffff;
+        }
+
+        .note {
+            margin-top: 40px;
+            color: #666666;
+            font-size: 14px;
+        }
+    </style>
+
+    <!-- Zoom Contact Center Webタグ -->
+    <script
+        type="module"
+        src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"
+        data-apikey="WRjNn8TISFuzfK4O7-bRxA"
+        data-env="us01">
+    </script>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>お問い合わせ方法を選択してください</h1>
+
+        <div class="button-area">
+
+            <!--
+                Zoom側で生成したオフサイトURL。
+                URLのcampaign_idとchannelをZoom Web SDKが利用します。
+            -->
+            <a
+                class="action-button support-button"
+                href="https://mki-saito.github.io/ZCC_Test/?campaign_id=fbYbxKwhRNiyEX96htZzcA&channel=video">
+                弊社サポート依頼ボタン
+            </a>
+
+            <!-- 接続先未設定 -->
+            <button
+                type="button"
+                class="action-button client-button"
+                onclick="alert('クライアントサポートセンターの接続先は未設定です。')">
+                クライアントサポートセンターへ
+            </button>
+
+        </div>
+
+        <div class="note">
+            Zoom Contact Center 検証環境
+        </div>
+
+    </main>
+
+</body>
+</html>

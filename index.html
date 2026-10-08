@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0">
@@ -76,21 +75,23 @@
         }
     </style>
 
-    <!-- Zoom Contact Center キャンペーン用Webタグ -->
-    https://us01ccistatic.zoom.us/us01cci/web-sdk/chat-client.js    </script>
+    <!-- Zoom Contact Center Webタグ -->
+    <script
+        type="module"
+        src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"
+        data-apikey="WRjNn8TISFuzfK4O7-bRxA"
+        data-env="us01">
+    </script>
 </head>
 
 <body>
-
     <main class="container">
 
         <h1>お問い合わせ方法を選択してください</h1>
 
         <div class="button-area">
 
-            <a
-                class="action-button support-button"
-                href="https://mki-saito.github.io/ZCC_Test/?campaign_id=fbYbxKwhRNiyEX96htZzcA&channel=video">
+            https://mki-saito.github.io/ZCC_Test/?campaign_id=fbYbxKwhRNiyEX96htZzcA&amp;channel=video
                 弊社サポート依頼ボタン
             </a>
 
@@ -109,5 +110,10 @@
 
     </main>
 
+    <script>
+        window.addEventListener("zoomCampaignSdk:ready", function () {
+            console.log("Zoom Contact Center SDK Ready");
+        });
+    </script>
 </body>
 </html>

@@ -51,9 +51,7 @@
             font-weight: bold;
             text-decoration: none;
             cursor: pointer;
-            transition:
-                transform 0.2s,
-                opacity 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
         }
 
         .action-button:hover {
@@ -78,13 +76,8 @@
         }
     </style>
 
-    <!-- Zoom Contact Center Webタグ -->
-    <script
-        type="module"
-        src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"
-        data-apikey="WRjNn8TISFuzfK4O7-bRxA"
-        data-env="us01">
-    </script>
+    <!-- Zoom Contact Center キャンペーン用Webタグ -->
+    https://us01ccistatic.zoom.us/us01cci/web-sdk/chat-client.js    </script>
 </head>
 
 <body>
@@ -95,17 +88,12 @@
 
         <div class="button-area">
 
-            <!--
-                Zoom側で生成したオフサイトURL。
-                URLのcampaign_idとchannelをZoom Web SDKが利用します。
-            -->
             <a
                 class="action-button support-button"
                 href="https://mki-saito.github.io/ZCC_Test/?campaign_id=fbYbxKwhRNiyEX96htZzcA&channel=video">
                 弊社サポート依頼ボタン
             </a>
 
-            <!-- 接続先未設定 -->
             <button
                 type="button"
                 class="action-button client-button"

@@ -1,84 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZCC検証サイト</title>
-
-    <style>
-        body {
-            font-family: "Yu Gothic", sans-serif;
-            background-color: #f5f7fa;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 100px auto;
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 50px;
-        }
-
-        .button-area {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .action-button {
-            width: 450px;
-            max-width: 90%;
-            height: 90px;
-            border: none;
-            border-radius: 10px;
-            font-size: 26px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .action-button:hover {
-            transform: translateY(-2px);
-        }
-
-        /* 黄色ボタン */
-        .support-button {
-            background-color: #ffd700;
-            color: #333333;
-        }
-
-        /* 赤色ボタン */
-        .client-button {
-            background-color: #d32f2f;
-            color: white;
-        }
-
-        .note {
-            margin-top: 40px;
-            color: #666;
-            font-size: 14px;
-        }
-    </style>
-
-    <!-- Zoom Contact Center Webタグ -->
-    <script
-        type="module"
-        src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"
-        data-apikey="WRjNn8TISFuzfK4O7-bRxA"
-        data-env="us01">
-    </script>
-
-</head>
-
-<body>
-
-<div class="container">
+<div class=
 
     <h1>お問い合わせ方法を選択してください</h1>
 
@@ -86,63 +6,16 @@
 
         <button
             class="action-button support-button"
-            onclick="openSupport()">
+            onclick="window.location.href='https://mki-saito.github.io/ZCC_Test/?campaign_id=fbYbxKwhRNiyEX96htZzcA&channel=video'">
             弊社サポート依頼ボタン
         </button>
 
         <button
             class="action-button client-button"
-            onclick="openClientSupport()">
+            onclick="window.location.href='https://mki-saito.github.io/ZCC_Test/?campaign_id=fbYbxKwhRNiyEX96htZzcA&channel=video'">
             クライアントサポートセンターへ
         </button>
 
     </div>
 
-    <div class="note">
-        Zoom Contact Center 検証環境
-    </div>
-
 </div>
-
-<script>
-
-window.addEventListener("zoomCampaignSdk:ready", () => {
-    console.log("Zoom Contact Center SDK Ready");
-});
-
-/*
- * 仮実装
- * SDKが正常にロードできたか確認するため
- */
-function openSupport() {
-
-    if (window.zoomCampaignSdk) {
-
-        console.log("Support Button Clicked");
-        window.zoomCampaignSdk.open();
-
-    } else {
-
-        alert("Zoom SDKがまだ読み込まれていません");
-
-    }
-}
-
-function openClientSupport() {
-
-    if (window.zoomCampaignSdk) {
-
-        console.log("Client Support Button Clicked");
-        window.zoomCampaignSdk.open();
-
-    } else {
-
-        alert("Zoom SDKがまだ読み込まれていません");
-
-    }
-}
-
-</script>
-
-</body>
-</html>
